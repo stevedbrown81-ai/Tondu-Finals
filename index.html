@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tondu Padel · Finals Day 2026</title>
+<meta name="description" content="Live scores for Tondu Padel League Finals Day, Sunday 30 August 2026.">
+
+<!-- ============================================================
+     SHARE PREVIEW (WhatsApp / iMessage / Facebook)
+     ------------------------------------------------------------
+     REPLACE the two URLs below with your real GitHub Pages address
+     once the site is live, e.g.
+       https://stevebrown81.github.io/tondu-finals/
+     WhatsApp will not show a preview image unless this is a full
+     https:// address — a relative path will not work.
+     ============================================================ -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="Tondu Padel · Finals Day 2026">
+<meta property="og:description" content="Live scores — Sunday 30 August, from 10:00.">
+<meta property="og:image"       content="https://REPLACE-ME.github.io/tondu-finals/tondu-badge.png">
+<meta property="og:url"         content="https://REPLACE-ME.github.io/tondu-finals/">
+<meta name="twitter:card"       content="summary_large_image">
+
+<link rel="icon" href="tondu-badge.png">
+<link rel="apple-touch-icon" href="tondu-badge.png">
+<meta name="theme-color" content="#17387D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#17387D; --navy-deep:#0C1B3D;
+    --orange:#EF993A; --orange-lt:#F7B96A;
+    --crest-red:#B82722;
+    --bg:#080F22; --panel:#101C3C; --panel2:#0C1631; --panel-in:#070D1C;
+    --line:#24345F; --line2:#1A2748;
+    --green:#34C77B; --bronze:#CD8B62;
+    --muted:#7C8CAE; --muted2:#5A6A8C; --text:#C9D4E8; --ink:#F2F6FF;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+  a{ color:var(--orange); text-decoration:none; }
+  body{ font-family:'Barlow',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; -webkit-font-smoothing:antialiased; padding-bottom:50px; }
+  .bg-badge{ position:fixed; top:50%; left:50%; width:min(700px,120vw); aspect-ratio:1; transform:translate(-50%,-50%); background:url('tondu-badge.png') center/contain no-repeat; opacity:0.04; z-index:-1; pointer-events:none; }
+
+  .header{ position:relative; overflow:hidden; padding:20px 18px 17px; text-align:center;
+    background:radial-gradient(120% 160% at 50% -20%, rgba(239,153,58,0.2) 0%, rgba(239,153,58,0) 58%), linear-gradient(160deg, var(--navy) 0%, #102A5E 45%, var(--navy-deep) 100%);
+    border-bottom:2px solid var(--orange); }
+  .header::after{ content:''; position:absolute; top:50%; right:-60px; width:230px; height:230px; transform:translateY(-50%) rotate(-9deg); background:url('tondu-badge.png') center/contain no-repeat; opacity:0.13; pointer-events:none; }
+  .lockup{ position:relative; z-index:2; display:flex; align-items:center; justify-content:center; gap:13px; }
+  .lockup img{ width:46px; }
+  .lockup .txt{ text-align:left; }
+  .eyebrow{ font-family:'Barlow Semi Condensed',sans-serif; font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--orange); }
+  .header h1{ font-family:'Barlow Condensed',sans-serif; font-size:26px; font-weight:700; letter-spacing:1px; text-transform:uppercase; line-height:0.95; color:#fff; }
+  .header .when{ position:relative; z-index:2; margin-top:7px; font-size:12.5px; color:rgba(255,255,255,0.72); }
+
+  .topbar{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:9px 12px; background:rgba(8,15,34,0.94); backdrop-filter:blur(8px); padding:10px 12px; border-bottom:1px solid var(--line2); position:sticky; top:0; z-index:30; }
+  .nav-link{ font-family:'Barlow Semi Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.6px; text-transform:uppercase; color:var(--text); border:1px solid var(--line); border-radius:8px; padding:7px 12px; }
+  .nav-link.here{ background:var(--navy); border-color:var(--orange); color:#fff; }
+  .live-pill{ display:inline-flex; align-items:center; gap:6px; font-family:'Barlow Semi Condensed',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--green); }
+  .live-dot{ width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse 1.8s infinite; }
+  .live-pill.offline{ color:var(--muted); } .live-pill.offline .live-dot{ background:var(--muted); animation:none; }
+  @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(52,199,123,0.5);} 70%{box-shadow:0 0 0 7px rgba(52,199,123,0);} 100%{box-shadow:0 0 0 0 rgba(52,199,123,0);} }
+  .updated{ font-size:11px; color:var(--muted); }
+  .ref-btn{ font-family:'Barlow Semi Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.6px; text-transform:uppercase; color:var(--text); background:transparent; border:1px solid var(--line); border-radius:8px; padding:7px 12px; cursor:pointer; }
+  .ref-btn.on{ background:var(--orange); border-color:var(--orange); color:var(--navy-deep); }
+
+  .wrap{ max-width:620px; margin:0 auto; padding:16px 14px 0; }
+
+  .champ{ display:none; text-align:center; padding:18px 16px; margin-bottom:16px; border-radius:14px;
+    background:radial-gradient(120% 180% at 50% -30%, rgba(239,153,58,0.3) 0%, rgba(239,153,58,0) 60%), linear-gradient(160deg,#1E3163 0%,#0D1B3B 100%);
+    border:1px solid rgba(239,153,58,0.5); }
+  .champ.show{ display:block; animation:champIn .7s cubic-bezier(.2,.8,.2,1); }
+  @keyframes champIn{ from{opacity:0; transform:translateY(14px) scale(.97);} to{opacity:1; transform:none;} }
+  .champ .cap{ font-family:'Barlow Semi Condensed',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--orange); margin-bottom:7px; }
+  .champ .name{ font-family:'Barlow Condensed',sans-serif; font-size:26px; font-weight:700; color:#fff; line-height:1.05; }
+
+  /* ---------- Seeding ---------- */
+  .seed-panel{ display:none; background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%); border:1px solid var(--line2); border-radius:14px; padding:16px; margin-bottom:18px; }
+  .seed-panel.show{ display:block; }
+  .seed-panel h2{ font-family:'Barlow Condensed',sans-serif; font-size:19px; font-weight:700; letter-spacing:0.6px; text-transform:uppercase; color:var(--ink); margin-bottom:5px; }
+  .hint{ font-size:12.5px; color:var(--muted); line-height:1.55; margin-bottom:14px; }
+  .seed-col h3{ font-family:'Barlow Semi Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin:10px 0 8px; }
+  .seed-row{ display:flex; align-items:center; gap:9px; margin-bottom:7px; }
+  .seed-row label{ font-family:'Barlow Semi Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.5px; color:var(--navy-deep); background:var(--orange); border-radius:5px; padding:4px 0; width:34px; text-align:center; flex:none; }
+  .seed-row input{ flex:1; min-width:0; background:var(--panel-in); border:1px solid var(--line); border-radius:8px; color:var(--ink); font-family:'Barlow',sans-serif; font-size:14px; padding:9px 10px; }
+  .seed-row input:focus{ outline:none; border-color:var(--orange); }
+  .panel-btns{ display:flex; flex-wrap:wrap; gap:9px; margin-top:14px; padding-top:14px; border-top:1px solid var(--line2); }
+  .mini-btn{ font-family:'Barlow Semi Condensed',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:0.6px; text-transform:uppercase; background:transparent; border:1px solid var(--line); color:var(--text); border-radius:8px; padding:8px 12px; cursor:pointer; }
+  .mini-btn:hover{ border-color:var(--muted); }
+  .mini-btn.danger{ border-color:rgba(184,39,34,0.5); color:#F08379; }
+
+  /* ---------- Matches ---------- */
+  .round{ margin-bottom:20px; }
+  .round-title{ font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; color:var(--ink); }
+  .round-sub{ font-family:'Barlow Semi Condensed',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+
+  .match{ background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%); border:1px solid var(--line2); border-left:3px solid var(--line); border-radius:12px; padding:11px 13px; margin-bottom:10px; }
+  .match.done{ border-left-color:var(--green); }
+  .match.live{ border-left-color:var(--crest-red); }
+  .match.final{ border-color:rgba(239,153,58,0.45); }
+  .match-head{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; }
+  .match-tag{ font-family:'Barlow Semi Condensed',sans-serif; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--orange); }
+  .match-court{ font-family:'Barlow Semi Condensed',sans-serif; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--muted2); }
+
+  .team-row{ display:flex; align-items:center; gap:9px; padding:5px 0; }
+  .team-name{ flex:1; min-width:0; font-size:14.5px; font-weight:500; color:var(--text); line-height:1.25; }
+  .team-name.tbd{ color:var(--muted2); font-style:italic; font-size:13px; }
+  .team-name.win{ color:var(--ink); font-weight:700; }
+  .score-ctrl{ flex:none; }
+  .score-val{ font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:700; color:var(--ink); min-width:22px; text-align:center; display:inline-block; }
+  .score-val.win{ color:var(--orange); }
+  .score-val.derived{ color:var(--muted); }
+  .stepper{ display:flex; align-items:center; gap:4px; }
+  .step-btn{ width:36px; height:36px; border-radius:9px; border:1px solid var(--line); background:var(--panel-in); color:var(--ink); font-size:19px; font-weight:600; line-height:1; cursor:pointer; }
+  .step-btn:active{ background:var(--navy); }
+  .step-btn:disabled{ opacity:0.3; cursor:default; }
+
+  .adv-note{ margin-top:8px; padding-top:8px; border-top:1px solid var(--line2); font-size:12px; color:var(--green); }
+  .match-foot{ margin-top:8px; padding-top:8px; border-top:1px solid var(--line2); display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; }
+  .games-line{ font-family:'Barlow Semi Condensed',sans-serif; font-size:12px; letter-spacing:0.8px; color:var(--muted); }
+  .tiny-btn{ font-family:'Barlow Semi Condensed',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; background:transparent; border:1px solid var(--line); color:var(--muted); border-radius:7px; padding:6px 10px; cursor:pointer; }
+  .tiny-btn.on{ border-color:var(--crest-red); color:#F08379; }
+  .games-editor{ display:none; margin-top:9px; padding-top:9px; border-top:1px solid var(--line2); }
+  .games-editor.show{ display:block; }
+  .ge-row{ display:flex; align-items:center; gap:7px; margin-bottom:6px; }
+  .ge-row span.setlab{ font-family:'Barlow Semi Condensed',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--muted2); width:42px; flex:none; }
+  .ge-row input{ width:52px; background:var(--panel-in); border:1px solid var(--line); border-radius:8px; color:var(--ink); font-family:'Barlow Condensed',sans-serif; font-size:17px; font-weight:600; text-align:center; padding:8px 4px; }
+  .ge-row input:focus{ outline:none; border-color:var(--orange); }
+  .ge-row em{ color:var(--muted2); font-style:normal; }
+  .ge-note{ font-size:11.5px; color:var(--muted2); line-height:1.5; margin-top:6px; }
+
+  .footer{ text-align:center; padding:22px 20px 0; font-size:12px; color:var(--muted2); line-height:1.7; }
+
+  .modal-bg{ display:none; position:fixed; inset:0; background:rgba(4,8,18,0.8); backdrop-filter:blur(3px); z-index:100; align-items:center; justify-content:center; padding:20px; }
+  .modal-bg.show{ display:flex; }
+  .modal{ background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%); border:1px solid var(--line); border-radius:15px; padding:22px; width:100%; max-width:330px; }
+  .modal h3{ font-family:'Barlow Condensed',sans-serif; font-size:21px; font-weight:700; text-transform:uppercase; color:var(--ink); margin-bottom:6px; }
+  .modal p{ font-size:13px; color:var(--muted); margin-bottom:14px; }
+  .modal input{ width:100%; background:var(--panel-in); border:1px solid var(--line); border-radius:9px; color:var(--ink); font-size:20px; text-align:center; letter-spacing:6px; padding:12px; }
+  .modal input:focus{ outline:none; border-color:var(--orange); }
+  .err{ color:#F08379; font-size:12.5px; min-height:18px; margin-top:7px; }
+  .modal-btns{ display:flex; gap:9px; margin-top:6px; }
+  .modal-btns button{ flex:1; border-radius:9px; padding:11px; font-family:'Barlow Semi Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.6px; text-transform:uppercase; cursor:pointer; }
+  .btn-cancel{ background:transparent; border:1px solid var(--line); color:var(--text); }
+  .btn-go{ background:var(--orange); border:1px solid var(--orange); color:var(--navy-deep); }
+</style>
+</head>
+<body>
+  <div class="bg-badge"></div>
+
+  <div class="header">
+    <div class="lockup">
+      <img src="tondu-badge.png" alt="Tondu RFC Padel crest">
+      <div class="txt">
+        <div class="eyebrow">Tondu Padel League</div>
+        <h1>Finals Day 2026</h1>
+      </div>
+    </div>
+    <div class="when">Sunday 30 August · from 10:00</div>
+  </div>
+
+  <div class="topbar">
+    <a class="nav-link here" href="index.html">Finals</a>
+    <a class="nav-link" href="league.html">League</a>
+    <span class="live-pill offline" id="livePill"><span class="live-dot"></span><span id="liveText">Connecting…</span></span>
+    <span class="updated" id="updated"></span>
+    <button class="ref-btn" id="refBtn">Referee</button>
+  </div>
+
+  <div class="wrap">
+    <div class="champ" id="champ">
+      <div class="cap">Tondu Padel Champions 2026</div>
+      <div class="name" id="champName"></div>
+    </div>
+
+    <div class="seed-panel" id="seedPanel">
+      <h2>Seeding — set the draw</h2>
+      <p class="hint">Type each pair into their finishing position. Pre-filled from the final league tables — change any that are wrong, including last-minute player swaps. Everyone watching sees it instantly.</p>
+      <div id="seedGrid"></div>
+      <div class="panel-btns">
+        <button class="mini-btn" id="btnRefill">Refill from league table</button>
+        <button class="mini-btn danger" id="btnClearScores">Clear all scores</button>
+      </div>
+    </div>
+
+    <div id="bracket"></div>
+
+    <div class="footer">
+      First to 2 sets · winners advance automatically.<br>
+      Referee taps the scores in; everyone else watches it update live.
+    </div>
+  </div>
+
+  <div class="modal-bg" id="modalBg">
+    <div class="modal">
+      <h3>Referee access</h3>
+      <p>Enter the passcode to edit scores &amp; seeding.</p>
+      <input type="tel" id="passInput" inputmode="numeric" maxlength="8" placeholder="••••">
+      <div class="err" id="passErr"></div>
+      <div class="modal-btns">
+        <button class="btn-cancel" id="passCancel">Cancel</button>
+        <button class="btn-go" id="passGo">Unlock</button>
+      </div>
+    </div>
+  </div>
+
+<script type="module">
+/* ============================================================
+   TONDU PADEL · FINALS DAY 2026 — referee / scoring page
+   ------------------------------------------------------------
+   1) REFEREE PASSCODE — change this to whatever you like:
+   ============================================================ */
+const REF_PASSCODE = "2026";
+
+/* ------------------------------------------------------------
+   2) FIREBASE CONFIG — leave as-is unless you rebuild the database.
+   ------------------------------------------------------------ */
+const firebaseConfig = {
+  apiKey:      "AIzaSyDptrt3PTGI4rgQr3zDJET4msO-IGXUN1c",
+  authDomain:  "tondu-padel-finals-day.firebaseapp.com",
+  databaseURL: "https://tondu-padel-finals-day-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId:   "tondu-padel-finals-day"
+};
+
+/* ------------------------------------------------------------
+   3) DEFAULT SEEDING — the final league tables, 1st to 8th.
+      These only pre-fill the boxes; you can edit any of them
+      on the day without touching this file.
+   ------------------------------------------------------------ */
+const DEFAULT_SEEDS = {
+  '1A':"G. Lindenburn & J. Gatt",  '1B':"L. Woolls & S. Grabham",
+  '2A':"D. Fitzgerald & M. Hayes", '2B':"L. Davies & G. Abbers",
+  '3A':"C. Woolls & O. Pengilly",  '3B':"C. O'Neill & J. Murphy",
+  '4A':"S. Brown & M. Jones",      '4B':"B. Farnham & S. Brown",
+  '5A':"L. Brown & J. Hurst",      '5B':"T. Warwick & N. Rees",
+  '6A':"D. Parry & T. Woolls",     '6B':"D. Bishop & H. Morgan",
+  '7A':"J. Tiley & M. Penny",      '7B':"M. Tatchell & H. Davies",
+  '8A':"A. Warner & M. Hughes",    '8B':"T. Saunders & O. Barrass"
+};
+/* ========================================================== */
+
+/* Bracket definition — must stay identical to index.html */
+const MATCHES = [
+  {id:'QF1',  slot:'Match 1', time:'10:00', court:'Court 2', phase:'Quarter-final', a:{seed:'4A'}, b:{seed:'1B'}},
+  {id:'QF2',  slot:'Match 1', time:'10:00', court:'Court 1', phase:'Quarter-final', a:{seed:'1A'}, b:{seed:'4B'}},
+  {id:'QF3',  slot:'Match 2', time:'',      court:'Court 2', phase:'Quarter-final', a:{seed:'2A'}, b:{seed:'3B'}},
+  {id:'QF4',  slot:'Match 2', time:'',      court:'Court 1', phase:'Quarter-final', a:{seed:'3A'}, b:{seed:'2B'}},
+  {id:'P8',   slot:'Match 3', time:'',      court:'Court 2', phase:'8th place',     a:{seed:'8A'}, b:{seed:'8B'}},
+  {id:'P7',   slot:'Match 3', time:'',      court:'Court 1', phase:'7th place',     a:{seed:'7A'}, b:{seed:'7B'}},
+  {id:'SF1',  slot:'Match 4', time:'',      court:'Court 2', phase:'Semi-final',    a:{win:'QF1'}, b:{win:'QF3'}},
+  {id:'SF2',  slot:'Match 4', time:'',      court:'Court 1', phase:'Semi-final',    a:{win:'QF2'}, b:{win:'QF4'}},
+  {id:'P6',   slot:'Match 5', time:'',      court:'Court 2', phase:'6th place',     a:{seed:'6A'}, b:{seed:'6B'}},
+  {id:'P5',   slot:'Match 5', time:'',      court:'Court 1', phase:'5th place',     a:{seed:'5A'}, b:{seed:'5B'}},
+  {id:'BRONZE',slot:'Match 6',time:'',      court:'Court 2', phase:'Bronze final',  a:{lose:'SF1'},b:{lose:'SF2'}, medal:'🥉'},
+  {id:'FINAL',slot:'Match 6', time:'',      court:'Court 1', phase:'Grand final',   a:{win:'SF1'}, b:{win:'SF2'}, medal:'🏆'}
+];
+const MMAP = Object.fromEntries(MATCHES.map(m=>[m.id,m]));
+const SEED_KEYS = ['1A','2A','3A','4A','5A','6A','7A','8A','1B','2B','3B','4B','5B','6B','7B','8B'];
+
+let state = { seeds:{}, scores:{}, games:{}, live:{}, updated:0 };
+let editing = false;
+let openGames = {};          // which game-score editors are expanded
+let save = ()=>{};
+
+/* ---- Helpers ---- */
+function ord(n){ return n+({1:'st',2:'nd',3:'rd'}[n]||'th'); }
+function seedPlaceholder(k){ if(!k||k.length<2) return 'TBD'; const n=parseInt(k[0],10); return isNaN(n)?'TBD':ord(n)+' · Group '+k[1]; }
+function resolveSide(s){ if(!s) return null; if(s.seed) return state.seeds[s.seed]||null; if(s.win) return winnerOf(s.win); if(s.lose) return loserOf(s.lose); return null; }
+
+function gamesOf(id){ const g=state.games[id]; return Array.isArray(g)?g:[]; }
+function hasGames(id){ return gamesOf(id).some(s=>Array.isArray(s)&&s[0]!==''&&s[0]!=null&&s[1]!==''&&s[1]!=null); }
+function setsFromGames(id){
+  let a=0,b=0;
+  gamesOf(id).forEach(s=>{
+    if(!Array.isArray(s)) return;
+    const x=+s[0], y=+s[1];
+    if(!isFinite(x)||!isFinite(y)||s[0]===''||s[1]===''||s[0]==null||s[1]==null) return;
+    if(x>y) a++; else if(y>x) b++;
+  });
+  return {a,b};
+}
+function scoreOf(id){
+  if(hasGames(id)) return setsFromGames(id);
+  const s=state.scores[id]||{}; return {a:+s.a||0,b:+s.b||0};
+}
+function isDone(id){ const s=scoreOf(id); return s.a>=2||s.b>=2; }
+function winnerOf(id){ if(!isDone(id)) return null; const m=MMAP[id],s=scoreOf(id); return s.a>s.b?resolveSide(m.a):resolveSide(m.b); }
+function loserOf(id){ if(!isDone(id)) return null; const m=MMAP[id],s=scoreOf(id); return s.a>s.b?resolveSide(m.b):resolveSide(m.a); }
+function started(id){ const s=scoreOf(id); return !!state.live[id] || s.a>0 || s.b>0 || hasGames(id); }
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function gamesLine(id){
+  return gamesOf(id)
+    .filter(s=>Array.isArray(s)&&s[0]!==''&&s[0]!=null&&s[1]!==''&&s[1]!=null)
+    .map(s=>s[0]+'–'+s[1]).join('  ·  ');
+}
+function touch(){ state.updated=Date.now(); save(state); render(); }
+
+/* ---- Editing actions ---- */
+function bump(id, side, delta){
+  if(hasGames(id)) return;                       // games are authoritative
+  const s=scoreOf(id);
+  let v=Math.max(0, Math.min(2, (side==='a'?s.a:s.b)+delta));
+  const ns={ a: side==='a'?v:s.a, b: side==='b'?v:s.b };
+  if(ns.a===2&&ns.b===2){ if(side==='a') ns.b=1; else ns.a=1; }
+  state.scores[id]=ns;
+  if(ns.a>0||ns.b>0) state.live[id]=true;
+  touch();
+}
+function setGame(id, setIdx, side, raw){
+  const g=gamesOf(id).slice();
+  while(g.length<3) g.push(['','']);
+  const cell=Array.isArray(g[setIdx])?g[setIdx].slice():['',''];
+  const v=raw.trim();
+  cell[side==='a'?0:1] = v===''? '' : Math.max(0, Math.min(20, parseInt(v,10)||0));
+  g[setIdx]=cell;
+  state.games[id]=g;
+  if(hasGames(id)) state.live[id]=true;
+  touch();
+}
+function toggleLive(id){
+  if(state.live[id]) delete state.live[id]; else state.live[id]=true;
+  touch();
+}
+function setSeed(k,v){
+  v=v.trim();
+  if(v) state.seeds[k]=v; else delete state.seeds[k];
+  state.updated=Date.now(); save(state);
+  renderBracket();   // don't re-render the panel — it would steal focus
+}
+
+/* ---- Rendering ---- */
+function render(){ renderSeedInputs(); renderBracket(); }
+
+function renderBracket(){
+  const champ=winnerOf('FINAL'), cEl=document.getElementById('champ');
+  if(champ){ document.getElementById('champName').textContent=champ; cEl.classList.add('show'); }
+  else cEl.classList.remove('show');
+
+  const wrap=document.getElementById('bracket');
+  wrap.innerHTML='';
+  const order=['Match 1','Match 2','Match 3','Match 4','Match 5','Match 6'];
+  const subFor={'Match 1':'Quarter-finals · 10:00','Match 2':'Quarter-finals','Match 3':'Placement · 7th &amp; 8th places','Match 4':'Semi-finals','Match 5':'Placement · 5th &amp; 6th','Match 6':'Bronze &amp; Grand final'};
+  order.forEach(slot=>{
+    const ms=MATCHES.filter(m=>m.slot===slot);
+    if(!ms.length) return;
+    const g=document.createElement('div'); g.className='round';
+    g.innerHTML='<div class="round-title">'+slot+'</div><div class="round-sub">'+(subFor[slot]||'')+'</div>';
+    ms.forEach(m=> g.appendChild(matchCard(m)));
+    wrap.appendChild(g);
+  });
+
+  const u=state.updated? new Date(state.updated):null;
+  document.getElementById('updated').textContent = u ? 'Updated '+u.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}) : '';
+}
+
+function matchCard(m){
+  const s=scoreOf(m.id), done=isDone(m.id), live=!done&&started(m.id);
+  const nameA=resolveSide(m.a), nameB=resolveSide(m.b);
+  const el=document.createElement('div');
+  el.className='match'+(done?' done':'')+(live?' live':'')+(m.id==='FINAL'?' final':'');
+  const aWin=done&&s.a>s.b, bWin=done&&s.b>s.a;
+  const gl=gamesLine(m.id);
+  const derived=hasGames(m.id);
+  const ready = nameA && nameB;
+
+  let foot='';
+  if(gl || editing){
+    foot='<div class="match-foot">'+
+      '<span class="games-line">'+(gl? esc(gl) : (editing?'No game scores yet':''))+'</span>'+
+      (editing?'<span>'+
+        (ready&&!done?'<button class="tiny-btn'+(state.live[m.id]?' on':'')+'" data-live="'+m.id+'">'+(state.live[m.id]?'On court':'Start match')+'</button> ':'')+
+        '<button class="tiny-btn" data-games="'+m.id+'">'+(openGames[m.id]?'Hide games':'Game scores')+'</button>'+
+      '</span>':'')+
+    '</div>';
+  }
+
+  let editor='';
+  if(editing && openGames[m.id]){
+    const g=gamesOf(m.id);
+    let rows='';
+    for(let i=0;i<3;i++){
+      const c=Array.isArray(g[i])?g[i]:['',''];
+      rows+='<div class="ge-row"><span class="setlab">Set '+(i+1)+'</span>'+
+        '<input type="number" inputmode="numeric" min="0" max="20" value="'+(c[0]===0?0:(c[0]||''))+'" data-g="'+m.id+'" data-set="'+i+'" data-side="a">'+
+        '<em>–</em>'+
+        '<input type="number" inputmode="numeric" min="0" max="20" value="'+(c[1]===0?0:(c[1]||''))+'" data-g="'+m.id+'" data-set="'+i+'" data-side="b">'+
+      '</div>';
+    }
+    editor='<div class="games-editor show">'+rows+
+      '<div class="ge-note">Top row is '+esc(nameA||'the first pair')+'. Enter game scores and the set count works itself out — leave blank and use the +/− buttons instead.</div></div>';
+  }
+
+  el.innerHTML=
+    '<div class="match-head">'+
+      '<span class="match-tag">'+m.phase+(m.medal?' '+m.medal:'')+'</span>'+
+      '<span class="match-court">'+m.court+(m.time?' · '+m.time:'')+'</span>'+
+    '</div>'+
+    teamRow(m,'a',nameA,s.a,aWin,m.medal&&aWin?m.medal:'',derived)+
+    teamRow(m,'b',nameB,s.b,bWin,m.medal&&bWin?m.medal:'',derived)+
+    (done&&advanceNote(m)?'<div class="adv-note">'+esc(advanceNote(m))+'</div>':'')+
+    foot+editor;
+
+  if(editing){
+    el.querySelectorAll('[data-step]').forEach(b=> b.addEventListener('click', ()=> bump(m.id,b.dataset.side,+b.dataset.step)));
+    el.querySelectorAll('[data-games]').forEach(b=> b.addEventListener('click', ()=>{ openGames[m.id]=!openGames[m.id]; renderBracket(); }));
+    el.querySelectorAll('[data-live]').forEach(b=> b.addEventListener('click', ()=> toggleLive(m.id)));
+    el.querySelectorAll('[data-g]').forEach(inp=>{
+      inp.addEventListener('change', ()=> setGame(inp.dataset.g, +inp.dataset.set, inp.dataset.side, inp.value));
+    });
+  }
+  return el;
+}
+
+function teamRow(m, key, name, score, isWin, medal, derived){
+  const tbd=!name, side=m[key];
+  const label = name || (side.seed? seedPlaceholder(side.seed) : (side.win?'Winner '+side.win:(side.lose?'Loser '+side.lose:'TBD')));
+  const other = key==='a'? scoreOf(m.id).b : scoreOf(m.id).a;
+  const disableUp = editing && other>=2;
+  const nameCls='team-name'+(tbd?' tbd':'')+(isWin?' win':'');
+  const valCls='score-val'+(isWin?' win':'')+(derived?' derived':'');
+  const ctrl = (editing && !derived) ?
+      '<div class="stepper">'+
+        '<button class="step-btn" data-step="-1" data-side="'+key+'">−</button>'+
+        '<span class="'+valCls+'">'+score+'</span>'+
+        '<button class="step-btn" data-step="1" data-side="'+key+'"'+(tbd||disableUp?' disabled':'')+'>+</button>'+
+      '</div>'
+    : '<span class="'+valCls+'">'+score+'</span>';
+  return '<div class="team-row">'+
+      '<span class="'+nameCls+'">'+esc(label)+(medal?' '+medal:'')+'</span>'+
+      '<span class="score-ctrl">'+ctrl+'</span>'+
+    '</div>';
+}
+
+function advanceNote(m){
+  const w=winnerOf(m.id);
+  if(!w) return '';
+  if(m.id==='FINAL')  return '🏆 '+w+' — Champions';
+  if(m.id==='BRONZE') return '🥉 '+w+' — 3rd place';
+  if(m.id==='P5') return '✓ '+w+' — 5th place';
+  if(m.id==='P6') return '✓ '+w+' — 6th place';
+  if(m.id==='P7') return '✓ '+w+' — 7th place';
+  if(m.id==='P8') return '✓ '+w+' — 8th place';
+  const t=MATCHES.find(x=> x.a.win===m.id||x.b.win===m.id);
+  return '✓ '+w+' → '+(t? t.phase+' ('+t.slot+')' : 'through');
+}
+
+/* ---- Seeding panel ---- */
+function buildSeedPanel(){
+  const grid=document.getElementById('seedGrid');
+  const col=(letter)=>{
+    let h='<div class="seed-col"><h3>League '+letter+' — final table</h3>';
+    for(let i=1;i<=8;i++){
+      const k=i+letter;
+      h+='<div class="seed-row"><label>'+ord(i)+'</label>'+
+         '<input type="text" id="seed-'+k+'" autocomplete="off" spellcheck="false" placeholder="'+ord(i)+' in League '+letter+'"></div>';
+    }
+    return h+'</div>';
+  };
+  grid.innerHTML=col('A')+col('B');
+  SEED_KEYS.forEach(k=>{
+    const inp=document.getElementById('seed-'+k);
+    inp.addEventListener('input', ()=> setSeed(k, inp.value));
+  });
+}
+function renderSeedInputs(){
+  SEED_KEYS.forEach(k=>{
+    const inp=document.getElementById('seed-'+k);
+    if(inp && document.activeElement!==inp) inp.value = state.seeds[k]||'';
+  });
+}
+
+document.getElementById('btnRefill').addEventListener('click', ()=>{
+  if(!confirm('Refill all 16 positions from the final league tables? Any names you have typed will be replaced.')) return;
+  state.seeds = Object.assign({}, DEFAULT_SEEDS);
+  touch();
+});
+document.getElementById('btnClearScores').addEventListener('click', ()=>{
+  if(!confirm('Clear every score and start the day fresh? Seeding is kept.')) return;
+  state.scores={}; state.games={}; state.live={};
+  openGames={};
+  touch();
+});
+
+/* ---- Referee mode ---- */
+const modalBg=document.getElementById('modalBg'), passInput=document.getElementById('passInput'), passErr=document.getElementById('passErr');
+document.getElementById('refBtn').addEventListener('click', ()=>{
+  if(editing){ setEditing(false); return; }
+  passErr.textContent=''; passInput.value=''; modalBg.classList.add('show'); passInput.focus();
+});
+document.getElementById('passCancel').addEventListener('click', ()=> modalBg.classList.remove('show'));
+document.getElementById('passGo').addEventListener('click', tryPass);
+passInput.addEventListener('keydown', e=>{ if(e.key==='Enter') tryPass(); });
+function tryPass(){
+  if(passInput.value===REF_PASSCODE){ modalBg.classList.remove('show'); setEditing(true); }
+  else passErr.textContent='Wrong passcode';
+}
+function setEditing(on){
+  editing=on;
+  const btn=document.getElementById('refBtn');
+  btn.classList.toggle('on',on);
+  btn.textContent = on ? '✓ Referee — tap to lock' : 'Referee';
+  document.getElementById('seedPanel').classList.toggle('show',on);
+  render();
+}
+
+/* ============================================================
+   BACKEND — Firebase if configured, else localStorage
+   ========================================================== */
+function setLive(on,text){
+  const p=document.getElementById('livePill');
+  p.classList.toggle('offline',!on);
+  document.getElementById('liveText').textContent=text;
+}
+function applyRemote(d){
+  if(!d) return;
+  state={ seeds:d.seeds||{}, scores:d.scores||{}, games:d.games||{}, live:d.live||{}, updated:d.updated||0 };
+  render();
+}
+
+const configured = !String(firebaseConfig.apiKey).startsWith('PASTE_');
+buildSeedPanel();
+
+if(configured){
+  try{
+    const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js');
+    const { getDatabase, ref, onValue, set } = await import('https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js');
+    const db=getDatabase(initializeApp(firebaseConfig));
+    const stateRef=ref(db,'finals2026');
+    save=(s)=> set(stateRef,s);
+    let seeded=false;
+    onValue(stateRef, snap=>{
+      const v=snap.val();
+      if(v){ applyRemote(v); }
+      else if(!seeded){
+        // Empty database: publish the provisional draw so nobody sees a blank page.
+        seeded=true;
+        state={ seeds:Object.assign({},DEFAULT_SEEDS), scores:{}, games:{}, live:{}, updated:Date.now() };
+        save(state); render();
+      } else render();
+      setLive(true,'Live');
+    }, ()=> setLive(false,'Offline'));
+  }catch(err){ console.error(err); setLive(false,'Offline'); render(); }
+} else {
+  const KEY='tondu-finals-2026';
+  save=(s)=> localStorage.setItem(KEY, JSON.stringify(s));
+  const load=()=>{ try{ return JSON.parse(localStorage.getItem(KEY)); }catch{ return null; } };
+  window.addEventListener('storage', e=>{ if(e.key===KEY) applyRemote(load()); });
+  const ex=load();
+  if(ex) state={seeds:ex.seeds||{},scores:ex.scores||{},games:ex.games||{},live:ex.live||{},updated:ex.updated||0};
+  else state.seeds=Object.assign({},DEFAULT_SEEDS);
+  setLive(false,'Local (not shared)');
+  render();
+}
+</script>
+</body>
+</html>
